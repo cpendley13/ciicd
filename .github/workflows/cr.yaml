@@ -1,0 +1,10 @@
+name: build docker image
+jobs:
+  build_image:
+    name: build_image
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: check out the repo
+        uses: actions/checkout@v3 
