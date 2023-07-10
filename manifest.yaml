@@ -7,6 +7,6 @@ metadata: # Dictionary
 spec:
   containers: # List
     - name: myapp
-      image: chriswebapp
+      image: cpendley13/webapp:v2
       ports:
         - containerPort: 80
