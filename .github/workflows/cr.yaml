@@ -25,3 +25,20 @@ jobs:
         with:
           push: true
           tags: cpendley13/webapp:v2
+
+      - name: update kubeconfig
+        run: aws eks update-kubeconfig --name eks-clusterssz2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+          AWS_REGION: 'us-east-2'
+
+      - name: update kubeconfig
+        uses: tale/kubectl-action@v1
+        run: kubectl apply -f manifest.yaml
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+          AWS_REGION: 'us-east-2'
+
+      
