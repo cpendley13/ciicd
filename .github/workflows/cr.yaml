@@ -30,6 +30,7 @@ jobs:
         run: |
           aws eks update-kubeconfig --name eks-clusterssz2 --region us-east-2
           kubectl apply -f manifest.yaml
+          kubectl get po
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
